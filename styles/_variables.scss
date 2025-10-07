@@ -16,7 +16,9 @@
 
   --color-red: #ff5500;
 
-  --border: #{rem(1)} solid var(--color-dark-15);
+  --border-15: #{rem(1)} solid var(--color-dark-15);
+  --border-20: #{rem(1)} solid var(--color-dark-20);
+  --border-40: #{rem(1)} solid var(--color-dark-40);
 
   --font-family-base: "Inter", sans-serif;
   --font-family-accent: "Kumbh sans", sans-serif;
