@@ -1,0 +1,105 @@
+@use "helpers" as *;
+
+body {
+  font-family: var(--font-family-base);
+  font-size: fluid(18, 14);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  color: var(--color-gray-50);
+  background-color: var(--color-dark);
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  color: var(--color-light);
+  font-weight: 500;
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3 {
+  font-family: var(--font-family-accent);
+}
+
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  font-weight: 600;
+}
+
+h1,
+.h1 {
+  font-size: fluid(70, 30);
+  line-height: 1.2;
+}
+h2,
+.h2 {
+  font-size: fluid(58, 28);
+  line-height: 1.3;
+}
+h3,
+.h3 {
+  font-size: fluid(40, 24);
+  /*line-height: 1.5; //default */
+}
+h4,
+.h4 {
+  font-size: fluid(26, 18);
+  /*line-height: 1.5; //default */
+}
+h5,
+.h5 {
+  font-size: fluid(24, 18);
+  /*line-height: 1.5; //default */
+}
+h6,
+.h6 {
+  font-size: fluid(20, 16);
+  /*line-height: 1.5; //default */
+}
+
+a,
+button,
+input,
+label,
+textarea,
+select,
+svg * {
+  transition-duration: var(--transition-duration);
+}
+
+a {
+  color: inherit;
+
+  @include hover {
+    color: var(--color-accent);
+  }
+
+  &[class] {
+    text-decoration: none;
+  }
+}
+
+:focus-visible {
+  outline: rem(2) dashed var(--color-light);
+  outline-offset: rem(4);
+  transition-duration: 0s !important;
+}
