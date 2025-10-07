@@ -533,12 +533,27 @@ button[aria-label]::before {
   align-self: end;
 }
 
+.header {
+  position: sticky;
+  z-index: 100;
+  top: 0;
+  animation-name: scrolling-header;
+  animation-fill-mode: both;
+  animation-timeline: scroll();
+  animation-range: 6.25rem 12.5rem;
+}
+@keyframes scrolling-header {
+  to {
+    box-shadow: 0 0 1rem 0 var(--color-dark-40);
+  }
+}
 .header__promo {
   padding-block: 1.25rem;
   font-size: clamp(0.75rem, 0.6544117647rem + 0.3921568627vw, 1.125rem);
   text-align: center;
   border-bottom: var(--border);
   color: var(--color-gray-60);
+  background-color: var(--color-dark);
 }
 @media (width <= 47.99875rem) {
   .header__promo {
