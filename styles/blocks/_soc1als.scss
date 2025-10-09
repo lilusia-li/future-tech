@@ -1,0 +1,28 @@
+@use "../helpers" as *;
+
+.soc1als {
+  &-list {
+    display: flex;
+    align-items: center;
+    column-gap: rem(20);
+
+    @include laptop {
+      column-gap: rem(14);
+    }
+  }
+
+  &-item {
+    display: flex;
+  }
+
+  &-link {
+    color: var(--color-light);
+
+    svg {
+      @include laptop {
+        width: rem(20);
+        height: rem(20);
+      }
+    }
+  }
+}
