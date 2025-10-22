@@ -2,7 +2,7 @@
 
 .badge {
   display: inline-flex;
-  padding: fluid(4, 2) fluid(12, 10);
+  padding: fluid-desktop-mobile(4, 2) fluid-desktop-mobile(12, 10);
   color: var(--color-light);
   background: linear-gradient(var(--color-dark-10), var(--color-dark-10))
       padding-box,

@@ -17,9 +17,9 @@
 
   &__promo {
     padding-block: rem(20);
-    font-size: fluid(18, 12);
+    font-size: fluid-desktop-mobile(18, 12);
     text-align: center;
-    border-bottom: var(--border);
+    border-bottom: var(--border-15);
     color: var(--color-gray-60);
     background-color: var(--color-dark);
 
@@ -31,6 +31,7 @@
   &__body {
     padding-block: rem(24);
     background-color: var(--color-dark-10);
+    border-bottom: var(--border-15);
 
     @include mobile {
       padding-block: rem(20);
