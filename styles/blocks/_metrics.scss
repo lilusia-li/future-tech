@@ -1,0 +1,48 @@
+@use "../helpers" as *;
+
+.metrics {
+  &__list {
+    --columnGap: #{fluid-desktop-laptop(100, 80)};
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: var(--columnGap);
+
+    @include laptop {
+      --columnGap: #{fluid-laptop-mobile(80, 40)};
+    }
+  }
+
+  &__item {
+    position: relative;
+
+    display: flex;
+    flex-direction: column-reverse;
+    row-gap: fluid-desktop-laptop(10, 2);
+    padding-block: fluid-desktop-laptop(50, 30);
+
+    @include laptop {
+      row-gap: fluid-laptop-mobile(2, 0);
+      padding-block: fluid-laptop-mobile(30, 20);
+    }
+
+    &:not(:last-child)::after {
+      @include vertical-line-15;
+
+      position: absolute;
+      content: "";
+      top: 0;
+      right: calc(var(--columnGap) / 2 * -1);
+    }
+  }
+
+  &__key {
+    color: var(--color-gray-60);
+  }
+  &__value {
+    font-family: var(--font-family-base);
+  }
+  &__sign {
+    color: var(--color-accent);
+  }
+}

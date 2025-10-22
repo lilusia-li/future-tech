@@ -1,0 +1,146 @@
+@use "../helpers" as *;
+
+.hero {
+  &__main {
+    @include tablet-above {
+      display: grid;
+      grid-template-columns: 59% auto;
+      grid-template-areas:
+        "body resources-preview"
+        "metrics resources-preview";
+    }
+  }
+
+  &__body {
+    grid-area: body;
+    padding-block: fluid-desktop-laptop(150, 100) rem(100);
+    padding-right: fluid-desktop-laptop(50, 40);
+
+    @include laptop {
+      padding-block: fluid-laptop-mobile(100, 40) fluid-laptop-mobile(100, 30);
+    }
+
+    @include tablet {
+      padding-right: 0;
+    }
+  }
+
+  &__subtitle {
+    font-family: var(--font-family-accent);
+    font-size: fluid-desktop-laptop(30, 22);
+    color: var(--color-dark-40);
+    font-weight: 500;
+    line-height: 1.2;
+
+    @include laptop {
+      font-size: fluid-laptop-mobile(22, 18);
+    }
+
+    &:not(:last-child) {
+      margin-bottom: fluid-desktop-laptop(30, 20);
+
+      @include laptop {
+        margin-bottom: fluid-laptop-mobile(20, 14);
+      }
+    }
+  }
+
+  &__title:not(:last-child) {
+    margin-bottom: fluid-desktop-laptop(20, 14);
+
+    @include laptop {
+      margin-bottom: fluid-laptop-mobile(14, 10);
+    }
+  }
+
+  &__metrics {
+    grid-area: metrics;
+
+    @include tablet-above {
+      border-top: var(--border-15);
+    }
+
+    @include tablet {
+      &::before {
+        width: 100vw;
+        right: calc(var(--container-padding-x) * -1);
+      }
+    }
+  }
+
+  &__resources-preview {
+    grid-area: resources-preview;
+
+    padding-left: fluid-desktop-laptop(80, 50);
+    padding-bottom: fluid-desktop-laptop(80, 50);
+
+    @include laptop {
+      padding-left: fluid-laptop-mobile(50, 40);
+      padding-bottom: fluid-laptop-mobile(50, 40);
+    }
+
+    @include tablet-above {
+      border-left: var(--border-15);
+    }
+
+    @include tablet {
+      width: 100vw;
+      margin-left: calc(var(--container-padding-x) * -1);
+      padding-right: rem(40);
+      padding-top: fluid-laptop-mobile(200, 100);
+    }
+  }
+
+  &__advantages {
+    border-block: var(--border-15);
+
+    &-list {
+      --columnGap: #{fluid-desktop-laptop(160, 100)};
+      --rowGap: #{rem(60)};
+
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--columnGap);
+
+      @include laptop {
+        --columnGap: #{fluid-laptop-mobile(100, 0)};
+      }
+
+      @include tablet {
+        grid-template-columns: repeat(1, 1fr);
+        gap: var(--rowGap);
+        padding-block: rem(30);
+      }
+    }
+
+    &-item {
+      position: relative;
+      padding-block: fluid-desktop-laptop(50, 40);
+
+      @include laptop {
+        padding-block: fluid-laptop-mobile(40, 30);
+      }
+
+      @include tablet {
+        padding-block: 0;
+      }
+
+      &:not(:last-child)::after {
+        content: "";
+        position: absolute;
+
+        @include tablet-above {
+          @include vertical-line-15;
+          top: 0;
+          right: calc(var(--columnGap) / 2 * -1);
+        }
+
+        @include tablet {
+          @include horizontal-line-15;
+          bottom: calc(var(--rowGap) / 2 * -1);
+          // right: ;
+        }
+      }
+    }
+  }
+}

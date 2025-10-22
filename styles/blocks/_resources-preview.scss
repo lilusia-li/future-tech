@@ -1,0 +1,41 @@
+@use "../helpers" as *;
+
+.resources-preview {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: start;
+  row-gap: fluid-desktop-laptop(30, 20);
+
+  background: url("../../images/resources-preview/bg.png") 0 0 / cover no-repeat
+    var(--color-dark);
+
+  @include tablet {
+    background: url("../../images/resources-preview/bg-mobile.png") 0 0 /
+      contain no-repeat var(--color-dark);
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    row-gap: fluid-desktop-laptop(14, 6);
+
+    @include laptop {
+      row-gap: fluid-laptop-mobile(6, 4);
+    }
+  }
+
+  &__title {
+    font-weight: 500;
+  }
+
+  &__subtitle {
+    color: var(--color-gray-60);
+  }
+
+  &__button {
+    @include mobile-s {
+      width: 100%;
+    }
+  }
+}
