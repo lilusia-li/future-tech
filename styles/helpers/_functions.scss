@@ -8,21 +8,74 @@
   }
 }
 
-@function fluid($max: 48, $min: 16) {
-  $maxViewportWidth: 1920;
-  $minViewportWidth: 390;
+@function fluid-desktop-mobile($desktopSize, $mobileSize) {
+  $desktopVW: 1920;
+  $mobileVW: 390;
 
-  $maxSize: math.div($max, 16);
-  $minSize: math.div($min, 16);
-  $maxWidth: math.div($maxViewportWidth, 16);
-  $minWidth: math.div($minViewportWidth, 16);
+  $desktopRemVW: math.div($desktopVW, 16);
+  $mobileRemVW: math.div($mobileVW, 16);
 
-  $slope: math.div(($maxSize - $minSize), ($maxWidth - $minWidth));
-  $yAxisIntersection: -$minWidth * $slope + $minSize;
+  $desktopRemSize: math.div($desktopSize, 16);
+  $mobileRemSize: math.div($mobileSize, 16);
+
+  //y = kx + b
+  $k: math.div(
+    ($desktopRemSize - $mobileRemSize),
+    ($desktopRemVW - $mobileRemVW)
+  );
+  $b: $mobileRemSize - $mobileRemVW * $k;
 
   @return clamp(
-    #{$minSize * 1rem},
-    #{$yAxisIntersection * 1rem} + #{$slope * 100vw},
-    #{$maxSize * 1rem}
+    #{$mobileRemSize * 1rem},
+    #{$k * 100vw} + #{$b * 1rem},
+    #{$desktopRemSize * 1rem}
+  );
+}
+
+@function fluid-desktop-laptop($desktopSize, $laptopSize) {
+  $desktopVW: 1920;
+  $laptopVW: 1440;
+
+  $desktopRemVW: math.div($desktopVW, 16);
+  $laptopRemVW: math.div($laptopVW, 16);
+
+  $desktopRemSize: math.div($desktopSize, 16);
+  $laptopRemSize: math.div($laptopSize, 16);
+
+  //y = kx + b
+  $k: math.div(
+    ($desktopRemSize - $laptopRemSize),
+    ($desktopRemVW - $laptopRemVW)
+  );
+  $b: $laptopRemSize - $laptopRemVW * $k;
+
+  @return clamp(
+    #{$laptopRemSize * 1rem},
+    #{$k * 100vw} + #{$b * 1rem},
+    #{$desktopRemSize * 1rem}
+  );
+}
+
+@function fluid-laptop-mobile($laptopSize, $mobileSize) {
+  $laptopVW: 1440;
+  $mobileVW: 390;
+
+  $laptopRemVW: math.div($laptopVW, 16);
+  $mobileRemVW: math.div($mobileVW, 16);
+
+  $laptopRemSize: math.div($laptopSize, 16);
+  $mobileRemSize: math.div($mobileSize, 16);
+
+  //y = kx + b
+  $k: math.div(
+    ($laptopRemSize - $mobileRemSize),
+    ($laptopRemVW - $mobileRemVW)
+  );
+  $b: $mobileRemSize - $mobileRemVW * $k;
+
+  @return clamp(
+    #{$mobileRemSize * 1rem},
+    #{$k * 100vw} + #{$b * 1rem},
+    #{$laptopRemSize * 1rem}
   );
 }
