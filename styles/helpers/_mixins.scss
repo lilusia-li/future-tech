@@ -25,7 +25,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: -50% -50%;
+  transform: translate(-50%, -50%);
 }
 @mixin abs-x {
   position: absolute;
@@ -36,6 +36,16 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+}
+
+@mixin extended-click-area {
+  position: relative;
+
+  &::before {
+    @include abs-center;
+    @include square(rem(44));
+    content: "";
+  }
 }
 
 @mixin square($size) {

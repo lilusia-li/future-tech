@@ -10,6 +10,8 @@
   background-color: transparent;
   border: none;
 
+  @include extended-click-area;
+
   @include hover {
     color: var(--color-accent);
   }

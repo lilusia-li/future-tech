@@ -445,21 +445,6 @@ a[class] {
   transition-duration: 0s !important;
 }
 
-a[aria-label],
-button[aria-label] {
-  position: relative;
-}
-a[aria-label]::before,
-button[aria-label]::before {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: -50% -50%;
-  width: 2.75rem;
-  height: 2.75rem;
-  content: "";
-}
-
 .icon {
   display: inline-flex;
   align-items: center;
@@ -540,6 +525,16 @@ button[aria-label]::before {
   color: var(--color-light);
   background-color: transparent;
   border: none;
+  position: relative;
+}
+.burger-button::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 2.75rem;
+  height: 2.75rem;
+  content: "";
 }
 @media (any-hover: hover) {
   .burger-button:hover {
