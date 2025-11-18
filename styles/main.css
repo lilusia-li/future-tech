@@ -1047,7 +1047,7 @@ button[aria-label]::before {
   }
 }
 @media (width <= 63.99875rem) {
-  .hero__metrics::before {
+  .hero__metrics::before, .hero__metrics::after {
     width: 100vw;
     right: calc(var(--container-padding-x) * -1);
   }
@@ -1070,7 +1070,6 @@ button[aria-label]::before {
 }
 @media (width <= 63.99875rem) {
   .hero__resources-preview {
-    width: 100vw;
     margin-left: calc(var(--container-padding-x) * -1);
     padding-right: 2.5rem;
     padding-top: clamp(6.25rem, 9.5238095238vw + 3.9285714286rem, 12.5rem);
