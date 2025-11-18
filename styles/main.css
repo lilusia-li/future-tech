@@ -481,7 +481,7 @@ button[aria-label]::before {
   }
 }
 .icon--yellow-arrow::after {
-  background-image: url(../../icons/arrow-top-right_yellow.svg);
+  background-image: url(../icons/arrow-top-right_yellow.svg);
 }
 
 .logo {
@@ -892,11 +892,11 @@ button[aria-label]::before {
   justify-content: end;
   align-items: start;
   row-gap: clamp(1.25rem, 2.0833333333vw + -0.625rem, 1.875rem);
-  background: url("../../images/resources-preview/bg.png") 0 0/cover no-repeat var(--color-dark);
+  background: url("../images/resources-preview/bg.png") 0 0/cover no-repeat var(--color-dark);
 }
 @media (width <= 63.99875rem) {
   .resources-preview {
-    background: url("../../images/resources-preview/bg-mobile.png") 0 0/contain no-repeat var(--color-dark);
+    background: url("../images/resources-preview/bg-mobile.png") 0 0/contain no-repeat var(--color-dark);
   }
 }
 .resources-preview__body {
@@ -970,7 +970,7 @@ button[aria-label]::before {
   transform: translateY(-50%);
   content: "";
   right: 0;
-  background: url(../../icons/arrow-top-right_black.svg) center no-repeat var(--color-accent);
+  background: url(../icons/arrow-top-right_black.svg) center no-repeat var(--color-accent);
   background-size: var(--arrowSize);
   border-radius: 50%;
 }

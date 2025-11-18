@@ -7,12 +7,12 @@
   align-items: start;
   row-gap: fluid-desktop-laptop(30, 20);
 
-  background: url("../../images/resources-preview/bg.png") 0 0 / cover no-repeat
+  background: url("../images/resources-preview/bg.png") 0 0 / cover no-repeat
     var(--color-dark);
 
   @include tablet {
-    background: url("../../images/resources-preview/bg-mobile.png") 0 0 /
-      contain no-repeat var(--color-dark);
+    background: url("../images/resources-preview/bg-mobile.png") 0 0 / contain
+      no-repeat var(--color-dark);
   }
 
   &__body {
